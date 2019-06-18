@@ -4,17 +4,20 @@ import { connect } from 'react-redux';
 import Todo from '../Todo';
 import AddTodo from '../AddTodo';
 
-const Todos = props => (
-  <TodosContainer>
-    <Header>
-      <h1>Todos</h1>
-    </Header>
-    {props.todos.map(todo => (
-      <Todo key={todo.id} todo={todo} />
-    ))}
-    <AddTodo />
-  </TodosContainer>
-);
+const Todos = props => {
+  const sortedTodos = props.todos.sort((a, b) => a.completed - b.completed);
+  return (
+    <TodosContainer>
+      <Header>
+        <h1>Todos</h1>
+      </Header>
+      {sortedTodos.map(todo => (
+        <Todo key={todo.id} todo={todo} />
+      ))}
+      <AddTodo />
+    </TodosContainer>
+  );
+};
 
 const mapStateToProps = state => ({
   todos: state,
