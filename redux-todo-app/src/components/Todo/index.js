@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { TodoItem, TodoText } from './todoStyle';
 import { FaTrash } from 'react-icons/fa';
-import { toggleCompleted } from '../../actions';
+import { toggleCompleted, deleteTodo } from '../../actions';
 
 class Todo extends Component {
   changeChecked = id => {
@@ -11,7 +11,6 @@ class Todo extends Component {
 
   render() {
     const { id, value, completed } = this.props.todo;
-    console.log(completed)
     return (
       <TodoItem isComplete={completed}>
         <TodoText>
@@ -23,7 +22,7 @@ class Todo extends Component {
           />
           <p>{value}</p>
         </TodoText>
-        <FaTrash />
+        <FaTrash onClick={() => this.props.deleteTodo(id)} />
       </TodoItem>
     );
   }
@@ -31,5 +30,5 @@ class Todo extends Component {
 
 export default connect(
   null,
-  { toggleCompleted },
+  { toggleCompleted, deleteTodo },
 )(Todo);

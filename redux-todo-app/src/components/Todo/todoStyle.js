@@ -12,6 +12,12 @@ export const TodoItem = styled.div`
 
   text-decoration: ${props => (props.isComplete ? 'line-through' : 'none')};
   opacity: ${props => (props.isComplete ? '.5' : '1')};
+
+  svg {
+    &:hover {
+      color: crimson;
+    }
+  }
 `;
 
 export const TodoText = styled.div`

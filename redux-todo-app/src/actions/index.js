@@ -10,3 +10,8 @@ export const addTodo = title => {
   const payload = { id: uuidV4(), value: title, completed: false };
   return { type: ADD_TODO, payload };
 };
+
+export const DELETE_TODO = 'DELETE_TODO';
+export const deleteTodo = id => {
+  return { type: DELETE_TODO, payload: id };
+};
