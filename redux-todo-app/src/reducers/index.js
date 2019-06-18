@@ -1,3 +1,5 @@
+import { TOGGLE_COMPLETED } from "../actions";
+
 const initialTodos = [
   {
     id: 'd7ea703b-a013-4107-8c03-7523f0bd4dd1',
@@ -23,6 +25,14 @@ const initialTodos = [
 
 const mainReducer = (state = initialTodos, action) => {
   switch (action.type) {
+    case TOGGLE_COMPLETED:
+      const newState = state.map(todo => {
+        if (todo.id === action.payload) {
+          return {...todo, completed: !todo.completed}
+        }
+        return todo;
+      })
+      return newState;
     default:
       return state;
   }

@@ -6,9 +6,12 @@ export const TodoItem = styled.div`
   height: 80px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #D2D3E3;
-  border-top: 0.5px solid #D2D3E3;
+  border-bottom: 1px solid #d2d3e3;
+  border-top: 0.5px solid #d2d3e3;
   padding-right: 10px;
+
+  text-decoration: ${props => (props.isComplete ? 'line-through' : 'none')};
+  opacity: ${props => (props.isComplete ? '.5' : '1')};
 `;
 
 export const TodoText = styled.div`
@@ -16,9 +19,9 @@ export const TodoText = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  
+
   &:hover {
-    border-left: 4px solid #5A5EE7;
+    border-left: 4px solid #5a5ee7;
   }
 
   p {
