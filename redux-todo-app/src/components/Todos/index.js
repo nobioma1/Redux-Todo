@@ -18,9 +18,9 @@ const Todos = props => {
         </div>
       </Header>
       <Scrollable>
-        {sortedTodos.map(todo => (
+        {sortedTodos.length > 0 ? sortedTodos.map(todo => (
           <Todo key={todo.id} todo={todo} />
-        ))}
+        )) : <p>No todo, Add a Todo...</p>}
       </Scrollable>
       <AddTodo />
     </TodosContainer>
