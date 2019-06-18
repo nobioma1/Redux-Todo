@@ -30,10 +30,17 @@ export const AddTodoContainer = styled.div`
       border: 1px solid green;
       width: 13%;
       padding: 5px;
-      border-radius: 5px;
+      border-radius: 3px;
+      transition: .3s ease-in-out;
 
       &:focus {
         outline: none;
+      }
+
+      &:hover {
+        border: 1px solid #5a5ee7;
+        color: #fefeff;
+        background-color: #5a5ee7;
       }
     }
   }
