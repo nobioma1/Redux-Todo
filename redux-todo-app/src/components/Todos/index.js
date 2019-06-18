@@ -5,7 +5,7 @@ import { TodosContainer, Header, Scrollable } from './todosStyle';
 import Todo from '../Todo';
 import AddTodo from '../AddTodo';
 
-const now = Moment().format('MMMM Do YYYY, h:mm:ss a');
+const now = Moment().format('MMMM Do YYYY');
 
 const Todos = props => {
   const sortedTodos = props.todos.sort((a, b) => a.completed - b.completed);

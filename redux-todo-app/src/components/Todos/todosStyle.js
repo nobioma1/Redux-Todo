@@ -8,6 +8,12 @@ export const TodosContainer = styled.div`
   min-height: 550px;
   border-radius: 5px;
   box-shadow: 3px 4px 5px -3px rgba(0, 0, 0, 0.75);
+
+  @media (max-width: 500px) {
+    width: 90%;
+    min-height: 90%;
+    height: 95%;
+  }
 `;
 
 export const Header = styled.header`
