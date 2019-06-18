@@ -16,7 +16,8 @@ export const AddTodoContainer = styled.div`
 
     input {
       height: 80%;
-      border: none;
+      border: ${props => (props.err ? '1px solid red' : '1px solid #d2d3e3')};
+      border-radius: 3px;
       font-size: 12px;
       padding: 0 10px;
       width: 80%;
@@ -31,7 +32,7 @@ export const AddTodoContainer = styled.div`
       width: 13%;
       padding: 5px;
       border-radius: 3px;
-      transition: .3s ease-in-out;
+      transition: 0.3s ease-in-out;
 
       &:focus {
         outline: none;

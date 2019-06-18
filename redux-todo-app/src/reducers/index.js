@@ -1,4 +1,4 @@
-import { TOGGLE_COMPLETED } from "../actions";
+import { TOGGLE_COMPLETED, ADD_TODO } from '../actions';
 
 const initialTodos = [
   {
@@ -28,11 +28,13 @@ const mainReducer = (state = initialTodos, action) => {
     case TOGGLE_COMPLETED:
       const newState = state.map(todo => {
         if (todo.id === action.payload) {
-          return {...todo, completed: !todo.completed}
+          return { ...todo, completed: !todo.completed };
         }
         return todo;
-      })
+      });
       return newState;
+    case ADD_TODO:
+      return [...state, action.payload];
     default:
       return state;
   }
