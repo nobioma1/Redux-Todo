@@ -2,7 +2,7 @@ import React from 'react';
 import { AppContainer } from './appStyle';
 import Todos from '../Todos';
 
-function App() {
+const App = () => {
   return (
     <AppContainer>
       <Todos />
