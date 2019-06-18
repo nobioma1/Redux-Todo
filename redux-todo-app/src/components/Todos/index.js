@@ -1,16 +1,26 @@
 import React from 'react';
 import { TodosContainer, Header } from './todosStyle';
+import { connect } from 'react-redux';
 import Todo from '../Todo';
 import AddTodo from '../AddTodo';
 
-const Todos = () => (
+const Todos = props => (
   <TodosContainer>
     <Header>
       <h1>Todos</h1>
     </Header>
-    <Todo />
+    {props.todos.map(todo => (
+      <Todo key={todo.id} todo={todo} />
+    ))}
     <AddTodo />
   </TodosContainer>
 );
 
-export default Todos;
+const mapStateToProps = state => ({
+  todos: state,
+});
+
+export default connect(
+  mapStateToProps,
+  {},
+)(Todos);
