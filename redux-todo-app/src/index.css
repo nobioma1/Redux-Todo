@@ -1,0 +1,11 @@
+*, html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  color: rgb(85, 84, 100);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
